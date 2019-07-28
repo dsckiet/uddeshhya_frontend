@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+body {
+    overflow-x: hidden!important;
+    font-family: 'Nunito';
+}
+
+.top {
+    background: rgba(196, 196, 196, 0.35);
+}
+
+.top_body {
+    /* padding:0; */
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.nav-item {
+    font-weight: 700;
+    color: #707070;
+    margin-right: 35px;
+}
+
+.nav-link {
+    color: #444444!important;
+}
+
+.child_img {
+    background: linear-gradient(90.29deg, rgba(213, 8, 8, 0.8) 16.55%, rgba(196, 196, 196, 0.2) 99.9%), url(../images/children.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 450px;
+}
+
+.heading {
+    position: absolute;
+    top: 150px;
+    /* font-style: normal; */
+    font-size: 4em;
+    color: #FFFFFF;
+    /* text-shadow: 2px 0 #FFFFFF; */
+    /* letter-spacing: 2px; */
+    font-weight: bold;
+}
+
+.abt {
+    /* margin-top: 50px; */
+    font-size: 36px;
+    /* color: rgba(213, 8, 8, 0.8); */
+    color: #FFFFFF;
+    /* text-shadow: 2px 0 rgba(213, 8, 8, 0.8); */
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.abtmain{
+    font-size: 36px;
+    color: rgba(213, 8, 8, 0.8);
+    /* color: #FFFFFF; */
+    /* text-shadow: 2px 0 rgba(213, 8, 8, 0.8); */
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.abtglimpse{
+    font-size: 2rem;
+    color: rgba(213, 8, 8, 0.8);
+    /* color: #FFFFFF; */
+    /* text-shadow: 2px 0 rgba(213, 8, 8, 0.8); */
+    letter-spacing: 2px;
+    font-weight: bold;
+    position: absolute;
+    left: 5%;
+    bottom: 5%;
+}
+
+.card {
+    border: 0;
+    background: rgba(213, 8, 8, 0.8);
+    /* box-shadow: 0px 4px 8px rgba(0, 0, 8, 0.25); */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+    padding: 16px;
+    margin-bottom: 16px;
+    /* height: 100%; */
+}
+
+.card-about{
+    height: 100%;
+}
+
+.number {
+    font-size: 20px;
+    color: #ffffff;
+    /* text-shadow: 2px 0 rgba(0, 0, 0, 0.25); */
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.tough {
+    background: rgba(213, 8, 8, 0.8);
+    background: linear-gradient(to bottom, white 0%, white 25%, rgba(213, 8, 8, 0.8) 0%, rgba(213, 8, 8, 0.8) 100%);
+    /* height: 200; */
+}
+
+/* .pos {
+    margin-top: 200px;
+} */
+
+.card_body {
+    margin: 20px;
+    font-size: 20px;
+    color: white;
+    /* text-shadow: 2px 0 white; */
+    letter-spacing: 2px;
+    /* font-weight: bold; */
+}
+
+.card_img {
+    background: linear-gradient(89.35deg, rgba(241, 241, 241, 0.8) 31.39%, rgba(255, 255, 255, 0) 99.74%), url(../images/children-close-up-crowd-764681.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+}
+
+.crd {
+    color: rgba(213, 8, 8, 0.8);
+    /* text-shadow: 1px 0 rgba(213, 8, 8, 0.8); */
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.thumb {
+    border-radius: 50%;
+    width: 80px;
+}
+
+.name {
+    color: #FFFFFF;
+    /* text-shadow: 1px 0 #FFFFFF; */
+    letter-spacing: 2px;
+    font-weight: bold;
+}
