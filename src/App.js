@@ -9,7 +9,6 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/stylesheets/style.css";
 import Navbar from "./components/Navbar/Navbar";
-import TopBanner from "./components/Banner/TopBanner";
 import About from "./components/AboutSection/About";
 import SubAbout from "./components/AboutSection/SubAbout";
 import Projects from "./components/Projects/Projects";
