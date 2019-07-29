@@ -15,22 +15,20 @@ import SubAbout from "./components/AboutSection/SubAbout";
 import Projects from "./components/Projects/Projects";
 import Team from "./components/Team/Team";
 import Footer from "./components/Footer/Footer";
+import Index from "./components/HomePage/Index";
 // import HomePage from "./components/HomePage/HomePage";
 
 const App = () => {
   return (
     <Router>
+      <Navbar/>
       <Switch>
-        <Navbar />
-        
-        {/* <Route exact path="/" component={HomePage} />
-        <Route exact path="/login" component={Login} />         */}
+        <Route exact path="/" render={() => <Index />} />
+        <Route exact path="/about-uddeshhya" component={About} />
+        <Route exact path="/ways-to-help" component={SubAbout} />
+        <Route exact path="/projects" component={Projects} />
+        <Route exact path="/team" component={Team} />
       </Switch>
-      <TopBanner/>
-      <About/>
-      <SubAbout/>
-      <Projects/>
-      <Team/>
       <Footer/>
     </Router>
   );

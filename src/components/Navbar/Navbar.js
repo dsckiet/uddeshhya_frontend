@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import {Link} from "react-router-dom";
-import logo from "../../assets/images/logo (2).svg"
-import "./style.css"
+import { Link } from "react-router-dom";
+import logo from "../../assets/images/logo (2).svg";
+import "./style.css";
 class Navbar extends Component {
   state = {};
   render() {
@@ -9,13 +9,15 @@ class Navbar extends Component {
       <div>
         <nav className="navbar navbar-expand-lg navbar-light">
           <div className="container">
-            <img
-              src={logo}
-              alt="logo"
-              width="48px"
-              height="54px"
-              style={{marginRight: "50px"}}
-            />
+            <Link to="/">
+              <img
+                src={logo}
+                alt="logo"
+                width="48px"
+                height="54px"
+                style={{ marginRight: "50px" }}
+              />
+            </Link>
             <button
               className="navbar-toggler"
               type="button"
@@ -27,46 +29,43 @@ class Navbar extends Component {
             >
               <i className="fa fa-bars" />
             </button>
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <div
+              className="collapse navbar-collapse"
+              id="navbarSupportedContent"
+            >
               <ul className="navbar-nav mr-auto nav">
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <Link className="nav-link" to="/about-uddeshhya">
                     About us
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Way to Help
-                  </a>
+                  <Link className="nav-link" to="/ways-to-help">
+                    Ways to Help
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <Link className="nav-link" to="/projects">
                     Projects
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <Link className="nav-link" to="/team">
                     Team
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <Link className="nav-link" to="/contact">
                     Contact us
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a
-                    href="#"
-                    className="nav-link nav-red"
-                  >
+                  <a href="#" className="nav-link nav-red">
                     Donate now
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a
-                    href="#"
-                    className="nav-link nav-red"
-                  >
+                  <a href="#" className="nav-link nav-red">
                     Be a Volunteer
                   </a>
                 </li>

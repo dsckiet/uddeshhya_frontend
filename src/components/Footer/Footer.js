@@ -24,8 +24,8 @@ class Footer extends Component {
               width="100%"
               height="350"
               style={{ borderRadius: 4, border: 0 }}
-              frameborder="0"
-              allowfullscreen
+              frameBorder="0"
+              allowFullScreen
             />
           </div>
         </div>
