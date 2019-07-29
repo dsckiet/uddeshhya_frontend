@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {Link} from "react-router-dom";
 import logo from "../../assets/images/logo (2).svg"
+import "./style.css"
 class Navbar extends Component {
   state = {};
   render() {
@@ -56,8 +57,7 @@ class Navbar extends Component {
                 <li className="nav-item">
                   <a
                     href="#"
-                    className="nav-link"
-                    style={{color: "rgb(213,8,8)!important"}}
+                    className="nav-link nav-red"
                   >
                     Donate now
                   </a>
@@ -65,8 +65,7 @@ class Navbar extends Component {
                 <li className="nav-item">
                   <a
                     href="#"
-                    className="nav-link"
-                    style={{color: "rgb(213,8,8)!important"}}
+                    className="nav-link nav-red"
                   >
                     Be a Volunteer
                   </a>

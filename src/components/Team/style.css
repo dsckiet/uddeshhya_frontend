@@ -1,0 +1,13 @@
+.team-card {
+    background: rgba(213, 8, 8, 0.8); border-radius: 72px;
+}
+
+.thumb {
+    border-radius: 50%;
+    width: 80px;
+}
+
+.name {
+    color: #FFFFFF;
+    font-weight: bold;
+}
