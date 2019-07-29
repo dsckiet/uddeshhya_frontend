@@ -4,7 +4,6 @@ import About from "../AboutSection/About";
 import SubAbout from "../AboutSection/SubAbout";
 import Projects from "../Projects/Projects";
 import Team from "../Team/Team";
-import Footer from "../Footer/Footer";
 import * as apiService from "../../utils/Services";
 
 class Index extends Component {

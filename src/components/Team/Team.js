@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import logo from "../../assets/images/Ellipse.png";
+import React from "react";
 import "./style.css";
 
 const Team = props => {
@@ -23,7 +22,7 @@ const Team = props => {
                       <img
                         className="thumb"
                         width="100%"
-                        src={logo}
+                        src={member.img.url}
                         alt="steve jobs"
                       />
                     </div>

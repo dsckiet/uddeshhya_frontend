@@ -97,7 +97,7 @@ body {
 }
 
 .card_img {
-    background: linear-gradient(89.35deg, rgba(241, 241, 241, 0.8) 31.39%, rgba(255, 255, 255, 0) 99.74%), url(../images/children-close-up-crowd-764681.jpg);
+    /* background: linear-gradient(89.35deg, rgba(241, 241, 241, 0.8) 31.39%, rgba(255, 255, 255, 0) 99.74%), url(../images/children-close-up-crowd-764681.jpg); */
     background-repeat: no-repeat;
     background-size: cover;
     height: 300px;
@@ -109,4 +109,18 @@ body {
     font-size: 20px;
     padding: 0;
     margin: 0;
+}
+
+.main-box {
+    color: white;
+    border: 1px solid white;
+}
+
+label {
+    font-weight: 700;
+    text-align: left;
+}
+
+.btn {
+    font-weight: 700;
 }

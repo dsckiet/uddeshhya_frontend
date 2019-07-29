@@ -60,14 +60,14 @@ class Navbar extends Component {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <a href="#" className="nav-link nav-red">
+                  <a href="https://www.ketto.org/" className="nav-link nav-red" target="_blank">
                     Donate now
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a href="#" className="nav-link nav-red">
+                  <Link to="/become-a-volunteer" className="nav-link nav-red">
                     Be a Volunteer
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
