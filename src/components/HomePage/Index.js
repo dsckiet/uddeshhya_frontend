@@ -24,7 +24,7 @@ class Index extends Component {
         <About />
         <SubAbout />
         <Projects projects={this.state.projects} />
-        <Team team={this.state.team} />
+        {/* <Team team={this.state.team} /> */}
         {/* <Footer /> */}
       </>
     );

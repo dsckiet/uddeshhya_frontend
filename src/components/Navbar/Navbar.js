@@ -35,6 +35,11 @@ class Navbar extends Component {
             >
               <ul className="navbar-nav mr-auto nav">
                 <li className="nav-item">
+                  <Link className="nav-link" to="/">
+                    Home
+                  </Link>
+                </li>
+                <li className="nav-item">
                   <Link className="nav-link" to="/about-uddeshhya">
                     About us
                   </Link>
@@ -60,7 +65,11 @@ class Navbar extends Component {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <a href="https://www.ketto.org/" className="nav-link nav-red" target="_blank">
+                  <a
+                    href="https://www.ketto.org/"
+                    className="nav-link nav-red"
+                    target="_blank"
+                  >
                     Donate now
                   </a>
                 </li>
