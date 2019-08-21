@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../assets/images/logo (2).svg";
+import logo from "../../assets/images/logo.png";
 import "./style.css";
 class Navbar extends Component {
   state = {};
@@ -13,9 +13,9 @@ class Navbar extends Component {
               <img
                 src={logo}
                 alt="logo"
-                width="48px"
-                height="54px"
-                style={{ marginRight: "50px" }}
+                width="60px"
+                // height="54px"
+                style={{ marginRight: "32px" }}
               />
             </Link>
             <button
@@ -34,11 +34,11 @@ class Navbar extends Component {
               id="navbarSupportedContent"
             >
               <ul className="navbar-nav mr-auto nav">
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <Link className="nav-link" to="/">
                     Home
                   </Link>
-                </li>
+                </li> */}
                 <li className="nav-item">
                   <Link className="nav-link" to="/about-uddeshhya">
                     About us
@@ -75,7 +75,12 @@ class Navbar extends Component {
                 </li>
                 <li className="nav-item">
                   <Link to="/become-a-volunteer" className="nav-link nav-red">
-                    Be a Volunteer
+                    Register as a Volunteer
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/blood-donation-portal" className="nav-link nav-red">
+                    Blood Portal
                   </Link>
                 </li>
               </ul>

@@ -5,6 +5,7 @@ import SubAbout from "../AboutSection/SubAbout";
 import Projects from "../Projects/Projects";
 import Team from "../Team/Team";
 import * as apiService from "../../utils/Services";
+import AllProjects from "../Projects/AllProjects";
 
 class Index extends Component {
   state = {
@@ -23,7 +24,7 @@ class Index extends Component {
         <TopBanner />
         <About />
         <SubAbout />
-        <Projects projects={this.state.projects} />
+        <AllProjects projects={this.state.projects} />
         {/* <Team team={this.state.team} /> */}
         {/* <Footer /> */}
       </>

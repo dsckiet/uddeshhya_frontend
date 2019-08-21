@@ -6,7 +6,7 @@ body {
 }
 
 .child_img {
-    background: linear-gradient(90.29deg, rgba(213, 8, 8, 0.8) 16.55%, rgba(196, 196, 196, 0.2) 99.9%), url(../images/children.jpg);
+    background: linear-gradient(90.29deg, rgba(213, 8, 8, 0.8) 24.55%, rgba(196, 196, 196, 0.2) 50.9%), url(../images/children.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -123,4 +123,8 @@ label {
 
 .btn {
     font-weight: 700;
+}
+
+a:hover {
+    text-decoration: none;
 }

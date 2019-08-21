@@ -15,6 +15,11 @@ import Team from "./components/Team/TeamPage";
 import Footer from "./components/Footer/Footer";
 import Index from "./components/HomePage/Index";
 import VolunteerForm from "./components/Volunteer/VolunteerForm";
+import BloodDonationHome from "./components/BloodDonation/BloodDonationHome";
+import DonateBlood from "./components/BloodDonation/DonateBlood";
+import RequestBlood from "./components/BloodDonation/RequestBlood";
+import Login from "./components/Admin/Auth/Login";
+import RegisterDonor from "./components/BloodDonation/RegisterDonor";
 
 const App = () => {
   return (
@@ -28,6 +33,12 @@ const App = () => {
         <Route exact path="/team" component={Team} />
         <Route eaxct path="/become-a-volunteer" component={VolunteerForm} />
         <Route exact path="/projects/:id" component={SingleProject} />
+        <Route exact path="/blood-donation-portal" component={BloodDonationHome} />
+        <Route exact path="/request-blood" component={RequestBlood} />
+        <Route exact path="/donate-blood" component={DonateBlood} />    
+        <Route exact path="/login" render={() => <Login/>}/>
+        <Route exact path="/register-as-donor" component={RegisterDonor} />
+
       </Switch>
       <Footer/>
     </Router>
