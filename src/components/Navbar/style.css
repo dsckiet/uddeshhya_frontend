@@ -12,15 +12,15 @@
     font-weight: 700;
     color: #707070;
     margin-right: 16px;
-    border-bottom: 2px solid transparent;
-    transition: 0.2s all ease;
 }
 
-.nav-item:hover{
-    border-bottom: 2px solid #555555;
+.nav-link:hover{
+    border-bottom: 3px solid #d50808;
 }
 
 .nav-link {
+    border-bottom: 2px solid transparent;
+    transition: 0.2s all ease;
     color: #444444!important;
 }
 

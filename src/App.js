@@ -20,6 +20,8 @@ import DonateBlood from "./components/BloodDonation/DonateBlood";
 import RequestBlood from "./components/BloodDonation/RequestBlood";
 import Login from "./components/Admin/Auth/Login";
 import RegisterDonor from "./components/BloodDonation/RegisterDonor";
+import Dashboard from "./components/Admin/Dashboard/Dashboard";
+import Donors from "./components/Admin/BloodDonation/Donors";
 
 const App = () => {
   return (
@@ -38,7 +40,9 @@ const App = () => {
         <Route exact path="/donate-blood" component={DonateBlood} />    
         <Route exact path="/login" render={() => <Login/>}/>
         <Route exact path="/register-as-donor" component={RegisterDonor} />
-
+        <Route exact path="/dashboard" component={Dashboard}/>
+        <Route exact path="/blood-requests" component={RequestBlood}/>
+        <Route exact path="/available-donors" component={Donors}/>
       </Switch>
       <Footer/>
     </Router>

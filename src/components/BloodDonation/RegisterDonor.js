@@ -83,6 +83,38 @@ class RegisterDonor extends Component {
                       </div>
 
                       <div className="col-lg-6 mt-3">
+                        <label>Ever donated before</label>
+                        <div className="row">
+                          <div className="form-check ml-3 mr-3 mt-1">
+                            <label className="form-check-label">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                onChange={this.handleChange}
+                                name="hasDonated"
+                                id="exampleRadios1"
+                                value="yes"
+                              />
+                              YES
+                            </label>
+                          </div>
+                          <div className="form-check ml-3 mr-3 mt-1">
+                            <label className="form-check-label">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                onChange={this.handleChange}
+                                name="hasDonated"
+                                id="exampleRadios1"
+                                value="no"
+                              />
+                              NO
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="col-lg-6 mt-3">
                         <label>Address</label>
                         <textarea
                           className="form-control"
@@ -92,18 +124,6 @@ class RegisterDonor extends Component {
                           required
                           rows="2"
                           placeholder="Address"
-                        />
-                      </div>
-
-                      <div className="col-lg-6 mt-3">
-                        <label>Ever donated before</label>
-                        <input
-                          onChange={this.handleChange}
-                          required
-                          name="hasDonated"
-                          type="text"
-                          className="form-control"
-                          placeholder="yes/no"
                         />
                       </div>
 

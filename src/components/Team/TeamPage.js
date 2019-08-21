@@ -3,17 +3,21 @@ import * as apiService from "../../utils/Services";
 
 class TeamPage extends Component {
   state = {
-    team: []
+    team: {
+      ngo: [],
+      student: []
+    }
   };
 
   componentDidMount() {
     apiService.getTeamData().then(data => {
-      this.setState({ team: data.team });
+      this.setState({ team: { ngo: data.ngo, student: data.student } });
+      console.log(this.state.ngo);
     });
   }
 
   render() {
-    let { team } = this.state;
+    let { ngo, student } = this.state.team;
     return (
       <div className="team">
         <div className="container mt-5">
@@ -24,7 +28,37 @@ class TeamPage extends Component {
             Our Team
           </p>
           <div className="row mt-4">
-            {team.map(member => {
+            {ngo.map(member => {
+              return (
+                <div className="col-lg-4 mb-4" key={member._id}>
+                  <div className="card team-card">
+                    <div className="row">
+                      <div className="col-lg-3 col-md-3 col-3">
+                        <img
+                          className="thumb"
+                          style={{maxHeight: '80px'}}
+                          width="100%"
+                          src={member.img.url}
+                          alt="steve jobs"
+                        />
+                      </div>
+                      <div
+                        className="col-lg-9 col-md-9 col-9 text-center"
+                        style={{ marginTop: 12 }}
+                      >
+                        <span className="name" style={{ fontSize: 20 }}>
+                          {member.name}
+                        </span>
+                        <br />
+                        <span className="name">{member.position}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+
+            {student.map(member => {
               return (
                 <div className="col-lg-4 mb-4" key={member._id}>
                   <div className="card team-card">
@@ -33,6 +67,7 @@ class TeamPage extends Component {
                         <img
                           className="thumb"
                           width="100%"
+                          style={{maxHeight: '80px'}}
                           src={member.img.url}
                           alt="steve jobs"
                         />
