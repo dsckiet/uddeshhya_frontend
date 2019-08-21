@@ -4,7 +4,7 @@ class DonateBlood extends Component {
     render(){
         return(
             <div className="container">
-                hi
+                    
             </div>
         )
     }

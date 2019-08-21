@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import "./style.css";
+import TopNav from "./TopNav";
 class Navbar extends Component {
   state = {};
   render() {
     return (
       <div>
+        <TopNav/>
         <nav className="navbar navbar-expand-lg navbar-light">
           <div className="container">
             <Link to="/">
