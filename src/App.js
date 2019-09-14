@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  Route,
-  Switch,
-  BrowserRouter as Router
-} from "react-router-dom";
+import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/stylesheets/style.css";
 import Navbar from "./components/Navbar/Navbar";
@@ -26,25 +22,29 @@ import Donors from "./components/Admin/BloodDonation/Donors";
 const App = () => {
   return (
     <Router>
-      <Navbar/>
+      <Navbar />
       <Switch>
-        <Route exact path="/" render={() => <Index />} />
+        <Route exact path="/" component={Index} />
         <Route exact path="/about-uddeshhya" component={About} />
         <Route exact path="/ways-to-help" component={SubAbout} />
         <Route exact path="/projects" component={Projects} />
         <Route exact path="/team" component={Team} />
         <Route eaxct path="/become-a-volunteer" component={VolunteerForm} />
         <Route exact path="/projects/:id" component={SingleProject} />
-        <Route exact path="/blood-donation-portal" component={BloodDonationHome} />
+        <Route
+          exact
+          path="/blood-donation-portal"
+          component={BloodDonationHome}
+        />
         <Route exact path="/request-blood" component={RequestBlood} />
-        <Route exact path="/donate-blood" component={DonateBlood} />    
-        <Route exact path="/login" render={() => <Login/>}/>
+        <Route exact path="/donate-blood" component={DonateBlood} />
+        <Route exact path="/login" render={() => <Login />} />
         <Route exact path="/register-as-donor" component={RegisterDonor} />
-        <Route exact path="/dashboard" component={Dashboard}/>
-        <Route exact path="/blood-requests" component={RequestBlood}/>
-        <Route exact path="/available-donors" component={Donors}/>
+        <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/blood-requests" component={RequestBlood} />
+        <Route exact path="/available-donors" component={Donors} />
       </Switch>
-      <Footer/>
+      <Footer />
     </Router>
   );
 };

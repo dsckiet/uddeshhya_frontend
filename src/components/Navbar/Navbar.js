@@ -8,7 +8,7 @@ class Navbar extends Component {
   render() {
     return (
       <div>
-        <TopNav/>
+        <TopNav />
         <nav className="navbar navbar-expand-lg navbar-light">
           <div className="container">
             <Link to="/">
@@ -71,6 +71,7 @@ class Navbar extends Component {
                     href="https://www.ketto.org/"
                     className="nav-link nav-red"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Donate now
                   </a>
@@ -81,7 +82,10 @@ class Navbar extends Component {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="/blood-donation-portal" className="nav-link nav-red">
+                  <Link
+                    to="/blood-donation-portal"
+                    className="nav-link nav-red"
+                  >
                     Blood Portal
                   </Link>
                 </li>
