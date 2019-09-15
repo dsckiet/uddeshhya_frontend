@@ -20,7 +20,7 @@ class VolunteerForm extends Component {
     suggestion: "",
     heardFrom: "",
     message: "",
-    isLoading: false,
+    isLoading: false
   };
 
   handleSubmit = e => {
@@ -87,7 +87,6 @@ class VolunteerForm extends Component {
   };
 
   handleChange = e => {
-    e.preventDefault();
     this.setState({
       [e.target.name]: e.target.value
     });
@@ -96,7 +95,7 @@ class VolunteerForm extends Component {
       skills = skills.split(",");
       this.setState({ skills });
     }
-    if(this.state.message === "success") {
+    if (this.state.message === "success") {
       this.componentDidMount();
     }
   };
@@ -258,9 +257,9 @@ class VolunteerForm extends Component {
                                   className="form-check-input"
                                   type="radio"
                                   name="heardFrom"
+                                  checked={this.state.heardFrom === "Faculty"}
                                   onChange={this.handleChange}
-                                  id="exampleRadios1"
-                                  value="Faculity"
+                                  value="Faculty"
                                 />
                                 Faculty
                               </label>
@@ -272,7 +271,7 @@ class VolunteerForm extends Component {
                                   type="radio"
                                   onChange={this.handleChange}
                                   name="heardFrom"
-                                  id="exampleRadios1"
+                                  checked={this.state.heardFrom === "Friends"}
                                   value="Friends"
                                 />
                                 Friends
@@ -284,8 +283,10 @@ class VolunteerForm extends Component {
                                   className="form-check-input"
                                   type="radio"
                                   onChange={this.handleChange}
+                                  checked={
+                                    this.state.heardFrom === "Social media"
+                                  }
                                   name="heardFrom"
-                                  id="exampleRadios1"
                                   value="Social media"
                                 />
                                 Social Media
@@ -297,8 +298,8 @@ class VolunteerForm extends Component {
                                   className="form-check-input"
                                   type="radio"
                                   onChange={this.handleChange}
+                                  checked={this.state.heardFrom === "Others"}
                                   name="heardFrom"
-                                  id="exampleRadios1"
                                   value="Others"
                                 />
                                 Other
@@ -371,7 +372,10 @@ class VolunteerForm extends Component {
                             placeholder="Suggestion..."
                           />
                         </div>
-                        <div className="col-lg-6 mb-4" style={{display: 'flex'}}>
+                        <div
+                          className="col-lg-6 mb-4"
+                          style={{ display: "flex" }}
+                        >
                           <button
                             type="submit"
                             className="btn btn-primary"
@@ -380,8 +384,18 @@ class VolunteerForm extends Component {
                             Submit your application
                           </button>
                           {this.state.isLoading ? (
-                            <div className="ld ld-ring ld-spin" style={{marginLeft: 8, alignSelf: 'center', width: '1.3em', height: '1.3em'}} />
-                          ) : this.state.message}
+                            <div
+                              className="ld ld-ring ld-spin"
+                              style={{
+                                marginLeft: 8,
+                                alignSelf: "center",
+                                width: "1.3em",
+                                height: "1.3em"
+                              }}
+                            />
+                          ) : (
+                            this.state.message
+                          )}
                         </div>
                       </div>
                     </div>
