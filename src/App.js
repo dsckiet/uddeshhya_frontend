@@ -41,7 +41,6 @@ const App = () => {
         <Route exact path="/login" render={() => <Login />} />
         <Route exact path="/register-as-donor" component={RegisterDonor} />
         <Route exact path="/dashboard" component={Dashboard} />
-        <Route exact path="/blood-requests" component={RequestBlood} />
         <Route exact path="/available-donors" component={Donors} />
       </Switch>
       <Footer />
