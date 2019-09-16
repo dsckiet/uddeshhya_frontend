@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as apiService from "../../utils/Services";
+import "./style.css";
 
 class TeamPage extends Component {
   state = {

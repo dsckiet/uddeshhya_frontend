@@ -16,14 +16,14 @@ const Team = props => {
           {team.map(member => {
             return (
               <div className="col-lg-4 mb-4" key={member._id}>
-                <div className="card team-card">
+                <div className="team-card">
                   <div className="row">
                     <div className="col-lg-3 col-md-3 col-3">
                       <img
                         className="thumb"
                         width="100%"
                         src={member.img.url}
-                        alt="steve jobs"
+                        alt=""
                       />
                     </div>
                     <div
@@ -39,7 +39,7 @@ const Team = props => {
                   </div>
                 </div>
               </div>
-            )
+            );
           })}
         </div>
       </div>
