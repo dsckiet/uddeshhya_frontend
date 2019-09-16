@@ -128,14 +128,17 @@ const RequestBlood = () => {
                     </div>
                     <div className="col-lg-6 mt-3">
                       <label>Requested for</label>
-                      <input
-                        type="text"
-                        name="requestFor"
+                      <select
+                        className="form-control"
                         required
                         onChange={e => setRequestFor(e.target.value)}
-                        className="form-control"
-                        placeholder="eg: Self"
-                      />
+                        name="requestFor"
+                        defaultValue="Select"
+                      >
+                        <option disabled>Select</option>
+                        <option value="self">Self</option>
+                        <option value="others">Others</option>
+                      </select>
                     </div>
                     <div className="col-lg-6 mt-3">
                       <label>Requirement</label>
