@@ -25,7 +25,7 @@ class VolunteerForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.setState({ isLoading: true, show: false });
+    this.setState({ isLoading: true });
     let {
       name,
       email,
@@ -58,32 +58,15 @@ class VolunteerForm extends Component {
       suggestion,
       heardFrom
     };
-    apiService.addVolunteerData(data).then(res => {
-      // console.log(data);
-      if (res.message === "success") {
-        this.setState({ message: "success" });
-        data = {
-          name: "",
-          email: "",
-          phone: "",
-          alternatePhone: "",
-          college: "",
-          branch: "",
-          year: "",
-          currentAddress: "",
-          permanentAddress: "",
-          suggestion: "",
-          skills: "",
-          heardFrom: "",
-          workSpan: "",
-          bloodgroup: "",
-          message: "success",
-          isLoading: false
-        };
-        this.setState(data);
-        this.componentDidMount();
-      }
-    });
+    apiService
+      .addVolunteerData(data)
+      .then(res => {
+        this.setState({ isLoading: false, message: res.message });
+      })
+      .catch(err => {
+        console.log(err.response.data.message);
+        this.setState({ isLoading: false, message: err.response.data.message });
+      });
   };
 
   handleChange = e => {
@@ -95,12 +78,7 @@ class VolunteerForm extends Component {
       skills = skills.split(",");
       this.setState({ skills });
     }
-    if (this.state.message === "success") {
-      this.componentDidMount();
-    }
   };
-
-  componentDidMount() {}
 
   render() {
     return (
@@ -372,6 +350,9 @@ class VolunteerForm extends Component {
                             placeholder="Suggestion..."
                           />
                         </div>
+                        <div className="col-lg-12 ">
+                          <h6>{this.state.message}</h6>
+                        </div>
                         <div
                           className="col-lg-6 mb-4"
                           style={{ display: "flex" }}
@@ -393,9 +374,7 @@ class VolunteerForm extends Component {
                                 height: "1.3em"
                               }}
                             />
-                          ) : (
-                            this.state.message
-                          )}
+                          ) : null}
                         </div>
                       </div>
                     </div>
