@@ -9,3 +9,5 @@ export const teamAPI = `${apiURL}/team`; //GET/
 export const volunteerPostAPI = `${apiURL}/volunteer`; //POST
 export const donorRegisterAPI = `${apiURL}/bloodPortal/donor`; //POST
 export const bloodRequestAPI = `${apiURL}/bloodPortal/requestBlood`; //POST
+export const donationConfirmAPI = `${apiURL}/donate`; //POST
+export const donationSuccessAPI = `${apiURL}/donate/payment`; //POST

@@ -6,7 +6,9 @@ import {
   singleProjectAPI,
   volunteerPostAPI,
   donorRegisterAPI,
-  bloodRequestAPI
+  bloodRequestAPI,
+  donationConfirmAPI,
+  donationSuccessAPI
 } from "./api";
 
 export const getIndexData = () => axios.get(indexAPI).then(res => res.data);
@@ -21,3 +23,7 @@ export const addDonor = data =>
   axios.post(donorRegisterAPI, data).then(res => res.data);
 export const addBloodRequest = data =>
   axios.post(bloodRequestAPI, data).then(res => res.data);
+export const donationConfirm = data =>
+  axios.post(donationConfirmAPI, data).then(res => res.data);
+export const donationSuccess = data =>
+  axios.post(donationSuccessAPI, data).then(res => res.data);
