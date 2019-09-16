@@ -11,8 +11,9 @@ class TeamPage extends Component {
 
   componentDidMount() {
     apiService.getTeamData().then(data => {
-      this.setState({ team: { ngo: data.ngo, student: data.student } });
-      console.log(this.state.ngo);
+      const ngo = data.team.filter(member => member.role === "ngo");
+      const student = data.team.filter(member => member.role === "student");
+      this.setState({ team: { ngo, student } });
     });
   }
 
@@ -36,7 +37,7 @@ class TeamPage extends Component {
                       <div className="col-lg-3 col-md-3 col-3">
                         <img
                           className="thumb"
-                          style={{maxHeight: '80px'}}
+                          style={{ maxHeight: "80px" }}
                           width="100%"
                           src={member.img.url}
                           alt="steve jobs"
@@ -67,7 +68,7 @@ class TeamPage extends Component {
                         <img
                           className="thumb"
                           width="100%"
-                          style={{maxHeight: '80px'}}
+                          style={{ maxHeight: "80px" }}
                           src={member.img.url}
                           alt="steve jobs"
                         />

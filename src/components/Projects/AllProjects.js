@@ -28,13 +28,21 @@ class AllProjects extends Component {
             {projects.map(project => {
               return (
                 <div className="col-lg-4" key={project._id}>
-                  <div className="card card_img mb-4" style={{background: `linear-gradient(89.35deg, rgba(0, 0, 0, 0.4) 6.39%, rgba(255, 255, 255, 0) 60.74%), url(${project.img.url})`}} />
+                  <div
+                    className="card card_img mb-4"
+                    style={{
+                      background: `linear-gradient(89.35deg, rgba(0, 0, 0, 0.4) 6.39%, rgba(255, 255, 255, 0) 60.74%), url(${project.img.url})`
+                    }}
+                  />
                   <p className="card_body crd mb-2">
                     <b>{project.title}</b>
                   </p>
                   <p>
                     {project.description.slice(0, 150)}...
-                    <Link to={`/projects/${project._id}`}>
+                    <Link
+                      to={`/projects/${project._id}`}
+                      onClick={() => window.scrollTo(0, 0)}
+                    >
                       <b>Read More</b>
                     </Link>
                   </p>
