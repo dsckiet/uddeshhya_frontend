@@ -137,7 +137,7 @@ const RequestBlood = () => {
                       >
                         <option disabled>Select</option>
                         <option value="self">Self</option>
-                        <option value="others">Others</option>
+                        <option value="other">Others</option>
                       </select>
                     </div>
                     <div className="col-lg-6 mt-3">
