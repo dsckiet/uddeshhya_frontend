@@ -12,11 +12,44 @@ class TeamPage extends Component {
 
   componentDidMount() {
     apiService.getTeamData().then(data => {
-      const ngo = data.team.filter(member => member.role === "ngo");
-      const student = data.team.filter(member => member.role === "student");
+      let ngo = data.team.filter(member => member.role === "ngo");
+      let student = data.team.filter(member => member.role === "student");
+
+      //sorting
+      student = this.sortTeam(student);
+      ngo = this.sortTeam(ngo);
+
       this.setState({ team: { ngo, student } });
     });
   }
+  sortTeam = team => {
+    let roles = [
+      "TREASURER",
+      "SECRETARY",
+      "JOINT-TREASURER",
+      "JOINT-SECRETARY",
+      "VICE PRESIDENT",
+      "PRESIDENT",
+      "CHAIRPERSON"
+    ];
+    let sorted = false;
+
+    while (!sorted) {
+      sorted = true;
+      for (let i = 0; i < team.length - 1; i++) {
+        if (
+          roles.indexOf(team[i].position) < roles.indexOf(team[i + 1].position)
+        ) {
+          let temp = team[i];
+          team[i] = team[i + 1];
+          team[i + 1] = temp;
+          sorted = false;
+        }
+      }
+    }
+
+    return team;
+  };
 
   render() {
     let { ngo, student } = this.state.team;
