@@ -20,8 +20,18 @@ class VolunteerForm extends Component {
     suggestion: "",
     heardFrom: "",
     message: "",
+    project: "",
+    projects: [],
     isLoading: false
   };
+
+  componentDidMount() {
+    apiService.getProjectsData().then(data => {
+      let projects = [];
+      data.projects.map(project => projects.push(project.title));
+      this.setState({ projects });
+    });
+  }
 
   handleSubmit = e => {
     e.preventDefault();
@@ -40,7 +50,8 @@ class VolunteerForm extends Component {
       skills,
       workSpan,
       suggestion,
-      heardFrom
+      heardFrom,
+      project
     } = this.state;
     let data = {
       name,
@@ -56,7 +67,8 @@ class VolunteerForm extends Component {
       skills,
       workSpan,
       suggestion,
-      heardFrom
+      heardFrom,
+      project
     };
     apiService
       .addVolunteerData(data)
@@ -196,6 +208,7 @@ class VolunteerForm extends Component {
                             defaultValue="Select"
                           >
                             <option disabled>Select</option>
+
                             <option>A+</option>
                             <option>A-</option>
                             <option>B+</option>
@@ -206,6 +219,7 @@ class VolunteerForm extends Component {
                             <option>O-</option>
                           </select>
                         </div>
+
                         <div className="col-lg-6 mt-3">
                           <label>College</label>
                           <input
@@ -217,15 +231,24 @@ class VolunteerForm extends Component {
                             placeholder="College"
                           />
                         </div>
-                        {/* <div className="col-lg-12 mt-3">
-                          <label>What do you know about UDDESHHYA?</label>
-                          <textarea
-                            type="text"
-                            rows="5"
+                        <div className="col-lg-6 mt-3 form-group">
+                          <label>Project willing to work on?</label>
+                          <select
                             className="form-control"
-                            placeholder="About..."
-                          ></textarea>
-                        </div> */}
+                            required
+                            onChange={this.handleChange}
+                            name="project"
+                            defaultValue="Select"
+                          >
+                            <option disabled>Select</option>
+                            {this.state.projects.length !== 0
+                              ? this.state.projects.map(project => (
+                                  <option value={project}>{project}</option>
+                                ))
+                              : null}
+                            <option value="Other">Other</option>
+                          </select>
+                        </div>
                         <div className="col-lg-12 mt-3">
                           <label>Heard From?</label>
                           <div className="row">
