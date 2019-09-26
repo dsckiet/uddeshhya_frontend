@@ -136,7 +136,7 @@ const Donation = props => {
                         className="btn btn-primary"
                         style={{ boxShadow: "0 2px 4px rgba(0,0,0,0.2)" }}
                       >
-                        Submit your application
+                        Submit
                       </button>
                       {isLoading ? (
                         <div
