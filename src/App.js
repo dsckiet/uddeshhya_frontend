@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/stylesheets/style.css";
 import Navbar from "./components/Navbar/Navbar";
@@ -23,7 +23,7 @@ import DonationGateway from "./components/Donation/DonationGateway";
 
 const App = () => {
   return (
-    <Router>
+    <>
       <Navbar />
       <Switch>
         <Route exact path="/" component={Index} />
@@ -48,7 +48,7 @@ const App = () => {
         <Route exact path="/payment/confirm" component={DonationGateway} />
       </Switch>
       <Footer />
-    </Router>
+    </>
   );
 };
 
