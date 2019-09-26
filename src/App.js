@@ -40,7 +40,7 @@ const App = () => {
         />
         <Route exact path="/request-blood" component={RequestBlood} />
         <Route exact path="/donate-blood" component={DonateBlood} />
-        <Route exact path="/login" render={() => <Login />} />
+        <Route exact path="/login" component={Login} />
         <Route exact path="/register-as-donor" component={RegisterDonor} />
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/available-donors" component={Donors} />
