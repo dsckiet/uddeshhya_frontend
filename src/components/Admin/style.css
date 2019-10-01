@@ -1,22 +1,28 @@
 .panel-option {
-    list-style: none;
-    text-decoration: none;
-    background: #707070;
-    color: #fff;
-    margin:0;
-    padding: 16px;
-    transition: 0.2s all ease;
+  list-style: none;
+  text-decoration: none;
+  background: #707070;
+  color: #fff;
+  margin: 0;
+  padding: 16px;
+  transition: 0.2s all ease;
 }
 
 .panel-option:hover {
-    background: #dd0000;
+  background: #dd0000;
 }
 
-.panel-wrapper{
-    padding: 0;
+.panel-wrapper {
+  padding: 0;
 }
 
 .panel-card {
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sellerCard {
+  border-radius: 6px;
+  background: white;
+  max-width: 320px;
 }

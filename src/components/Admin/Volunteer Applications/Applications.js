@@ -41,7 +41,7 @@ const Applications = () => {
       <Modal open={show} onClose={hideModal} center>
         <div className="row">
           <div className="col-lg-12">
-            <h2>Donor Details</h2>
+            <h2>Application Details</h2>
             {applications.length > 0 ? (
               current >= 0 ? (
                 <>
@@ -156,7 +156,7 @@ const Applications = () => {
                   })
                 ) : (
                   <>
-                    <h3 className="mt-2">No blood requests found</h3>
+                    <h3 className="mt-2">No applications found</h3>
                   </>
                 )}
               </tbody>
