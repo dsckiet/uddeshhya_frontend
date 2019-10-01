@@ -1,5 +1,5 @@
-import React from "react";
-import { Route, Switch } from "react-router-dom";
+import React, { useContext } from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/stylesheets/style.css";
 import Navbar from "./components/Navbar/Navbar";
@@ -20,6 +20,9 @@ import Dashboard from "./components/Admin/Dashboard/Dashboard";
 import Donors from "./components/Admin/BloodDonation/Donors";
 import Donation from "./components/Donation/Donation";
 import DonationGateway from "./components/Donation/DonationGateway";
+import { AuthContext } from "./contexts/AuthProvider";
+import NotFound from "./components/404/NotFound";
+import UnAuth from "./components/404/Unauth";
 
 const App = () => {
   return (
@@ -46,9 +49,43 @@ const App = () => {
         <Route exact path="/available-donors" component={Donors} />
         <Route exact path="/donate-now" component={Donation} />
         <Route exact path="/payment/confirm" component={DonationGateway} />
+        <ProtectedRoute
+          userRole={["admin"]}
+          exact
+          path="/admin"
+          component={Dashboard}
+        />
+        <Route path="/unauthorized" component={UnAuth} />
+        <Route path="*" component={NotFound} />
       </Switch>
       <Footer />
     </>
+  );
+};
+
+const ProtectedRoute = ({ component: Component, userRole, ...rest }) => {
+  const Auth = useContext(AuthContext);
+  if (userRole !== undefined) {
+    return (
+      <Route
+        {...rest}
+        render={props =>
+          Auth.token !== "" && userRole.indexOf(Auth.user.role) !== -1 ? (
+            <Component {...props} />
+          ) : (
+            <Redirect to="/unauthorized" />
+          )
+        }
+      />
+    );
+  }
+  return (
+    <Route
+      {...rest}
+      render={props =>
+        Auth.token !== "" ? <Component {...props} /> : <Redirect to="/login" />
+      }
+    />
   );
 };
 
