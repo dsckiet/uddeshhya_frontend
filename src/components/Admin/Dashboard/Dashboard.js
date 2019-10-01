@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import LeftPanel from "./LeftPanel";
+import { Link } from "react-router-dom";
 
 class Dashboard extends Component {
   render() {
@@ -8,40 +8,79 @@ class Dashboard extends Component {
         <div className="abtmain mt-5">
           <p>Dashboard</p>
         </div>
-        {/* <LeftPanel /> */}
         <div className="row">
           <div className="col-lg-4">
-            <a
-              href="/available-donors"
+            <Link
+              to="/available-donors"
               className="card"
               style={{ background: "#fff" }}
             >
-              <h4 style={{ marginBottom: 0, fontWeight: 700 }}>Donors</h4>
-            </a>
+              <h4 style={{ marginBottom: 0, fontWeight: 700 }}>
+                Available Donors
+              </h4>
+            </Link>
           </div>
 
           <div className="col-lg-4">
-            <a
-              href="/blood-requests"
+            <Link
+              to="/blood-requests"
               className="card"
               style={{ background: "#fff" }}
             >
               <h4 style={{ marginBottom: 0, fontWeight: 700 }}>
                 Blood Requests
               </h4>
-            </a>
+            </Link>
           </div>
 
           <div className="col-lg-4">
-            <a
-              href="/volunteer-applications"
+            <Link
+              to="/volunteer-applications"
               className="card"
               style={{ background: "#fff" }}
             >
               <h4 style={{ marginBottom: 0, fontWeight: 700 }}>
                 Volunteer Applications
               </h4>
-            </a>
+            </Link>
+          </div>
+          <div className="col-lg-4">
+            <Link
+              to="/manage-users"
+              className="card"
+              style={{ background: "#fff" }}
+            >
+              <h4 style={{ marginBottom: 0, fontWeight: 700 }}>Users</h4>
+            </Link>
+          </div>
+          <div className="col-lg-4">
+            <Link
+              to="/manage-projects"
+              className="card"
+              style={{ background: "#fff" }}
+            >
+              <h4 style={{ marginBottom: 0, fontWeight: 700 }}>Projects</h4>
+            </Link>
+          </div>
+          <div className="col-lg-4">
+            <Link
+              to="/manage-teams"
+              className="card"
+              style={{ background: "#fff" }}
+            >
+              <h4 style={{ marginBottom: 0, fontWeight: 700 }}>Teams</h4>
+            </Link>
+          </div>
+          <div className="col-lg-4">
+            <Link
+              to="/money-donations"
+              className="card"
+              style={{ background: "#fff" }}
+            >
+              <h4 style={{ marginBottom: 0, fontWeight: 700 }}>
+                Money Donations
+              </h4>
+            </Link>
           </div>
         </div>
       </div>

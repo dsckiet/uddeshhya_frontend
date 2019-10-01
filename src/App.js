@@ -12,17 +12,23 @@ import Footer from "./components/Footer/Footer";
 import Index from "./components/HomePage/Index";
 import VolunteerForm from "./components/Volunteer/VolunteerForm";
 import BloodDonationHome from "./components/BloodDonation/BloodDonationHome";
-import DonateBlood from "./components/BloodDonation/DonateBlood";
+// import DonateBlood from "./components/BloodDonation/DonateBlood";
 import RequestBlood from "./components/BloodDonation/RequestBlood";
 import Login from "./components/Admin/Auth/Login";
 import RegisterDonor from "./components/BloodDonation/RegisterDonor";
 import Dashboard from "./components/Admin/Dashboard/Dashboard";
-import Donors from "./components/Admin/BloodDonation/Donors";
 import Donation from "./components/Donation/Donation";
 import DonationGateway from "./components/Donation/DonationGateway";
 import { AuthContext } from "./contexts/AuthProvider";
 import NotFound from "./components/404/NotFound";
 import UnAuth from "./components/404/Unauth";
+import Donors from "./components/Admin/BloodDonation/Donors";
+import Requests from "./components/Admin/BloodDonation/Requests";
+import Users from "./components/Admin/Auth/Users/Users";
+import ManageProjects from "./components/Admin/Projects/ManageProjects";
+import Teams from "./components/Admin/Teams/Teams";
+import MoneyDonations from "./components/Admin/Money Donations/MoneyDonations";
+import Applications from "./components/Admin/Volunteer Applications/Applications";
 
 const App = () => {
   return (
@@ -42,11 +48,10 @@ const App = () => {
           component={BloodDonationHome}
         />
         <Route exact path="/request-blood" component={RequestBlood} />
-        <Route exact path="/donate-blood" component={DonateBlood} />
+        {/* <Route exact path="/donate-blood" component={DonateBlood} /> */}
         <Route exact path="/login" component={Login} />
         <Route exact path="/register-as-donor" component={RegisterDonor} />
         <Route exact path="/dashboard" component={Dashboard} />
-        <Route exact path="/available-donors" component={Donors} />
         <Route exact path="/donate-now" component={Donation} />
         <Route exact path="/payment/confirm" component={DonationGateway} />
         <ProtectedRoute
@@ -54,6 +59,48 @@ const App = () => {
           exact
           path="/admin"
           component={Dashboard}
+        />
+        <ProtectedRoute
+          userRole={["admin"]}
+          exact
+          path="/available-donors"
+          component={Donors}
+        />
+        <ProtectedRoute
+          userRole={["admin"]}
+          exact
+          path="/blood-requests"
+          component={Requests}
+        />
+        <ProtectedRoute
+          userRole={["admin"]}
+          exact
+          path="/volunteer-applications"
+          component={Applications}
+        />
+        <ProtectedRoute
+          userRole={["admin"]}
+          exact
+          path="/manage-users"
+          component={Users}
+        />
+        <ProtectedRoute
+          userRole={["admin"]}
+          exact
+          path="/manage-projects"
+          component={ManageProjects}
+        />
+        <ProtectedRoute
+          userRole={["admin"]}
+          exact
+          path="/manage-teams"
+          component={Teams}
+        />
+        <ProtectedRoute
+          userRole={["admin"]}
+          exact
+          path="/money-donations"
+          component={MoneyDonations}
         />
         <Route path="/unauthorized" component={UnAuth} />
         <Route path="*" component={NotFound} />

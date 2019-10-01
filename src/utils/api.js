@@ -11,3 +11,5 @@ export const donorRegisterAPI = `${apiURL}/bloodPortal/donor`; //POST
 export const bloodRequestAPI = `${apiURL}/bloodPortal/requestBlood`; //POST
 export const donationConfirmAPI = `${apiURL}/donate`; //POST
 export const donationSuccessAPI = `${apiURL}/donate/payment`; //POST
+export const loginAPI = `${apiURL}/users/login`; //POST
+export const getDonorsListAPI = `${apiURL}/admin/bloodDonors`; //POST with auth

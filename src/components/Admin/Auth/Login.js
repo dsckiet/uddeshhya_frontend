@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { AuthContext } from "../../../contexts/AuthProvider";
 import { DispatchContext } from "../../../contexts/AuthProvider";
 import useInputState from "../../../hooks/useInputState";
-import axios from "axios";
+import * as apiService from "../../../utils/Services";
 
 const Login = ({ history }) => {
   const Auth = useContext(AuthContext);
@@ -27,13 +27,9 @@ const Login = ({ history }) => {
       password
     };
     try {
-      const response = await axios.post(
-        "https://uddeshya.herokuapp.com/api/v1/users/login",
-        body
-      );
-      setMessage(response.message);
+      const response = await apiService.login(body);
+      setMessage(response.data.message);
       window.scrollTo(0, 0);
-      // setApiStatus({ message: response.data.message, type: response.status });
       dispatch({
         type: "SET",
         user: response.data.user,
