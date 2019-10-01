@@ -12,7 +12,7 @@ import Footer from "./components/Footer/Footer";
 import Index from "./components/HomePage/Index";
 import VolunteerForm from "./components/Volunteer/VolunteerForm";
 import BloodDonationHome from "./components/BloodDonation/BloodDonationHome";
-import DonateBlood from "./components/BloodDonation/DonateBlood";
+// import DonateBlood from "./components/BloodDonation/DonateBlood";
 import RequestBlood from "./components/BloodDonation/RequestBlood";
 import Login from "./components/Admin/Auth/Login";
 import RegisterDonor from "./components/BloodDonation/RegisterDonor";
@@ -48,7 +48,7 @@ const App = () => {
           component={BloodDonationHome}
         />
         <Route exact path="/request-blood" component={RequestBlood} />
-        <Route exact path="/donate-blood" component={DonateBlood} />
+        {/* <Route exact path="/donate-blood" component={DonateBlood} /> */}
         <Route exact path="/login" component={Login} />
         <Route exact path="/register-as-donor" component={RegisterDonor} />
         <Route exact path="/dashboard" component={Dashboard} />
