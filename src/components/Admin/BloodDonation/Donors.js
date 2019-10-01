@@ -120,7 +120,7 @@ const Donors = () => {
 
         <div className="row">
           <div className="col-lg-12">
-            <table className="table table-striped">
+            <table className="table table-striped table-responsive">
               <thead className="table-danger">
                 <tr>
                   <th scope="col">#</th>

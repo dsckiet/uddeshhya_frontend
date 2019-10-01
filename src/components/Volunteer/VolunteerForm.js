@@ -242,8 +242,10 @@ class VolunteerForm extends Component {
                           >
                             <option disabled>Select</option>
                             {this.state.projects.length !== 0
-                              ? this.state.projects.map(project => (
-                                  <option value={project}>{project}</option>
+                              ? this.state.projects.map((project, i) => (
+                                  <option key={i} value={project}>
+                                    {project}
+                                  </option>
                                 ))
                               : null}
                             <option value="Other">Other</option>
