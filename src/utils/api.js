@@ -13,3 +13,5 @@ export const donationConfirmAPI = `${apiURL}/donate`; //POST
 export const donationSuccessAPI = `${apiURL}/donate/payment`; //POST
 export const loginAPI = `${apiURL}/users/login`; //POST
 export const getDonorsListAPI = `${apiURL}/admin/bloodDonors`; //POST with auth
+export const getBloodRequestsListAPI = `${apiURL}/admin/bloodRequests`; //GET with auth
+export const volunteerApplicationsAPI = `${apiURL}/admin/volunteers`; //GET with auth
