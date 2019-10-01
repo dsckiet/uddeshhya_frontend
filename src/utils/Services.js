@@ -13,7 +13,9 @@ import {
   getDonorsListAPI,
   getBloodRequestsListAPI,
   volunteerApplicationsAPI,
-  moneyDonationsAPI
+  moneyDonationsAPI,
+  getUsersAPI,
+  addUsersAPI
 } from "./api";
 
 export const getIndexData = () => axios.get(indexAPI).then(res => res.data);
@@ -41,3 +43,7 @@ export const volunteerApplications = headers =>
   axios.get(volunteerApplicationsAPI, headers).then(res => res.data);
 export const moneyDonations = headers =>
   axios.get(moneyDonationsAPI, headers).then(res => res.data);
+export const getUsers = headers =>
+  axios.get(getUsersAPI, headers).then(res => res.data);
+export const addUsers = (data, headers) =>
+  axios.post(addUsersAPI, data, headers).then(res => res);
