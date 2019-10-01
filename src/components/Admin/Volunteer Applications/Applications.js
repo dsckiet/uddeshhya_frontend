@@ -156,7 +156,7 @@ const Applications = () => {
                   })
                 ) : (
                   <>
-                    <h3 className="mt-2">No blood requests found</h3>
+                    <h3 className="mt-2">No applications found</h3>
                   </>
                 )}
               </tbody>

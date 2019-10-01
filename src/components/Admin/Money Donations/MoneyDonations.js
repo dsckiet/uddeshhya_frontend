@@ -133,7 +133,7 @@ const MoneyDonations = () => {
                   })
                 ) : (
                   <>
-                    <h3 className="mt-2">No blood requests found</h3>
+                    <h3 className="mt-2">No donations found</h3>
                   </>
                 )}
               </tbody>
