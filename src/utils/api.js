@@ -19,4 +19,6 @@ export const moneyDonationsAPI = `${apiURL}/admin/donations`; //GET with auth
 export const getUsersAPI = `${apiURL}/users`; //GET with auth
 export const addUsersAPI = `${apiURL}/users/add`; //POST with auth
 export const deleteUsersAPI = `${apiURL}/users/delete`; //GET with auth and id
+export const addProjectsAPI = `${apiURL}/projects/add`; //POST with auth
+export const deleteProjectsAPI = `${apiURL}/projects/delete`; //GET with auth and id
 

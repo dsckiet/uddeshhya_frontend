@@ -16,7 +16,9 @@ import {
   moneyDonationsAPI,
   getUsersAPI,
   addUsersAPI,
-  deleteUsersAPI
+  deleteUsersAPI,
+  addProjectsAPI,
+  deleteProjectsAPI
 } from "./api";
 
 export const getIndexData = () => axios.get(indexAPI).then(res => res.data);
@@ -48,6 +50,9 @@ export const getUsers = headers =>
   axios.get(getUsersAPI, headers).then(res => res.data);
 export const addUsers = (data, headers) =>
   axios.post(addUsersAPI, data, headers).then(res => res);
-export const deleteUser = (id,headers) =>
+export const deleteUser = (id, headers) =>
   axios.get(`${deleteUsersAPI}/${id}`, headers).then(res => res);
-
+export const addProjects = (data, headers) =>
+  axios.post(addProjectsAPI, data, headers).then(res => res);
+export const deleteProject = (id, headers) =>
+  axios.get(`${deleteProjectsAPI}/${id}`, headers).then(res => res);
