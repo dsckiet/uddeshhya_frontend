@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { AuthContext } from "../../../contexts/AuthProvider";
 import useInputState from "../../../hooks/useInputState";
 import * as apiService from "../../../utils/Services";
-// UDDESHYA/projects/jahclvkcod629o9nhxze
+
 const AddProject = ({ history }) => {
   const Auth = useContext(AuthContext);
 
@@ -18,7 +18,7 @@ const AddProject = ({ history }) => {
     const formData = new FormData();
 
     let body = {
-      title,
+      title: title.toUpperCase(),
       description,
       img
     };
