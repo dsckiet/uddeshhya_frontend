@@ -15,7 +15,12 @@ import {
   volunteerApplicationsAPI,
   moneyDonationsAPI,
   getUsersAPI,
-  addUsersAPI
+  addUsersAPI,
+  deleteUsersAPI,
+  addProjectsAPI,
+  deleteProjectsAPI,
+  addTeamsAPI,
+  deleteTeamsAPI
 } from "./api";
 
 export const getIndexData = () => axios.get(indexAPI).then(res => res.data);
@@ -47,3 +52,13 @@ export const getUsers = headers =>
   axios.get(getUsersAPI, headers).then(res => res.data);
 export const addUsers = (data, headers) =>
   axios.post(addUsersAPI, data, headers).then(res => res);
+export const deleteUser = (id, headers) =>
+  axios.get(`${deleteUsersAPI}/${id}`, headers).then(res => res);
+export const addProjects = (data, headers) =>
+  axios.post(addProjectsAPI, data, headers).then(res => res);
+export const deleteProject = (id, headers) =>
+  axios.get(`${deleteProjectsAPI}/${id}`, headers).then(res => res);
+export const addTeams = (data, headers) =>
+  axios.post(addTeamsAPI, data, headers).then(res => res);
+export const deleteTeam = (id, headers) =>
+  axios.get(`${deleteTeamsAPI}/${id}`, headers).then(res => res);

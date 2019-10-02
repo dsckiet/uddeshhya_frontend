@@ -10,6 +10,7 @@ const Users = () => {
   const [users, setUsers] = useState([]);
   const [show, setShow] = useState(false);
   const [current, setCurrent] = useState(-1);
+  const [isLoading, setIsLoading] = useState(false);
 
   const showModal = i => {
     setShow(true);
@@ -36,37 +37,48 @@ const Users = () => {
     getDonorsList();
   }, [Auth]);
 
+  const handleDeleteUser = async id => {
+    setIsLoading(true);
+    try {
+      await apiService.deleteUser(id, {
+        headers: {
+          "x-auth-token": Auth.token
+        }
+      });
+      const response = await apiService.getUsers({
+        headers: {
+          "x-auth-token": Auth.token
+        }
+      });
+      setUsers(response.users);
+      hideModal();
+      setIsLoading(false);
+    } catch (err) {
+      setIsLoading(false);
+      console.log(err.response.data.message);
+    }
+  };
+
   return (
     <>
       <Modal open={show} onClose={hideModal} center>
         <div className="row">
-          <div className="col-lg-12">
-            <h2>Donor Details</h2>
-            {users.length > 0 ? (
-              current >= 0 ? (
-                <>
-                  <div>
-                    <span style={{ color: "gray", fontSize: "14px" }}>
-                      Address:{" "}
-                    </span>
-
-                    {users[current].address}
-                  </div>
-                  <div>
-                    <span style={{ color: "gray", fontSize: "14px" }}>
-                      Phone:{" "}
-                    </span>
-                    {users[current].phone}
-                  </div>
-                  <div>
-                    <span style={{ color: "gray", fontSize: "14px" }}>
-                      Email:{" "}
-                    </span>
-                    {users[current].email}
-                  </div>
-                </>
-              ) : null
-            ) : null}
+          <div className="col-lg-12 m-2 p-3">
+            <h2>Do you want to delete this user?</h2>
+            <button
+              className="btn btn-danger"
+              disabled={isLoading}
+              onClick={() => handleDeleteUser(users[current]._id)}
+            >
+              {isLoading ? "Please Wait.." : "Yes"}
+            </button>
+            <button
+              className="btn btn-secondary m-2"
+              disabled={isLoading}
+              onClick={hideModal}
+            >
+              No
+            </button>
           </div>
         </div>
       </Modal>
@@ -93,33 +105,33 @@ const Users = () => {
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Name</th>
-                  <th scope="col">Blood Group</th>
-                  <th scope="col">Has Donated</th>
-                  <th scope="col">More Details</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Role</th>
+                  <th scope="col">Delete ?</th>
                 </tr>
               </thead>
               <tbody>
                 {users.length !== 0 ? (
                   users.map((user, i) => {
-                    return (
+                    return user.email !== Auth.user.email ? (
                       <tr key={i}>
                         <th scope="row">{i}</th>
                         <td>{user.name}</td>
-                        <td>{user.bloodGroup}</td>
-                        <td>{user.hasDonated ? "Yes" : "No"}</td>
+                        <td>{user.email}</td>
+                        <td>{user.role}</td>
                         <td>
                           <button
-                            className="btn btn-sm"
+                            className="btn btn-sm btn-danger"
                             onClick={() => {
                               setCurrent(i);
                               showModal(i);
                             }}
                           >
-                            More
+                            DELETE
                           </button>
                         </td>
                       </tr>
-                    );
+                    ) : null;
                   })
                 ) : (
                   <>

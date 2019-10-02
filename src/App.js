@@ -30,6 +30,8 @@ import Teams from "./components/Admin/Teams/Teams";
 import MoneyDonations from "./components/Admin/Money Donations/MoneyDonations";
 import Applications from "./components/Admin/Volunteer Applications/Applications";
 import AddUser from "./components/Admin/Auth/Users/AddUser";
+import AddProject from "./components/Admin/Projects/AddProject";
+import AddTeam from "./components/Admin/Teams/AddTeam";
 
 const App = () => {
   return (
@@ -108,6 +110,18 @@ const App = () => {
           exact
           path="/add-user"
           component={AddUser}
+        />
+        <ProtectedRoute
+          userRole={["admin"]}
+          exact
+          path="/add-project"
+          component={AddProject}
+        />
+        <ProtectedRoute
+          userRole={["admin"]}
+          exact
+          path="/add-team"
+          component={AddTeam}
         />
         <Route path="/unauthorized" component={UnAuth} />
         <Route path="*" component={NotFound} />
