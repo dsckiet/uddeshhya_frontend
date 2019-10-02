@@ -18,3 +18,5 @@ export const volunteerApplicationsAPI = `${apiURL}/admin/volunteers`; //GET with
 export const moneyDonationsAPI = `${apiURL}/admin/donations`; //GET with auth
 export const getUsersAPI = `${apiURL}/users`; //GET with auth
 export const addUsersAPI = `${apiURL}/users/add`; //POST with auth
+export const deleteUsersAPI = `${apiURL}/users/delete`; //GET with auth and id
+

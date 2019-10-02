@@ -15,7 +15,8 @@ import {
   volunteerApplicationsAPI,
   moneyDonationsAPI,
   getUsersAPI,
-  addUsersAPI
+  addUsersAPI,
+  deleteUsersAPI
 } from "./api";
 
 export const getIndexData = () => axios.get(indexAPI).then(res => res.data);
@@ -47,3 +48,6 @@ export const getUsers = headers =>
   axios.get(getUsersAPI, headers).then(res => res.data);
 export const addUsers = (data, headers) =>
   axios.post(addUsersAPI, data, headers).then(res => res);
+export const deleteUser = (id,headers) =>
+  axios.get(`${deleteUsersAPI}/${id}`, headers).then(res => res);
+
