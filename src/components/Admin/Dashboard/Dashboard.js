@@ -82,6 +82,15 @@ class Dashboard extends Component {
               </h4>
             </Link>
           </div>
+          <div className="col-lg-4">
+            <Link
+              to="/messages"
+              className="card"
+              style={{ background: "#fff" }}
+            >
+              <h4 style={{ marginBottom: 0, fontWeight: 700 }}>Messages</h4>
+            </Link>
+          </div>
         </div>
       </div>
     );
