@@ -23,3 +23,5 @@ export const addProjectsAPI = `${apiURL}/projects/add`; //POST with auth
 export const deleteProjectsAPI = `${apiURL}/projects/delete`; //GET with auth and id
 export const addTeamsAPI = `${apiURL}/team/add`; //POST with auth
 export const deleteTeamsAPI = `${apiURL}/team/delete`; //GET with auth and id
+export const contactAPI = `${apiURL}/contact`; //POST
+export const messagesAPI = `${apiURL}/admin/messages`; //POST with auth

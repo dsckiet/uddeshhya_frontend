@@ -20,7 +20,9 @@ import {
   addProjectsAPI,
   deleteProjectsAPI,
   addTeamsAPI,
-  deleteTeamsAPI
+  deleteTeamsAPI,
+  contactAPI,
+  messagesAPI
 } from "./api";
 
 export const getIndexData = () => axios.get(indexAPI).then(res => res.data);
@@ -62,3 +64,7 @@ export const addTeams = (data, headers) =>
   axios.post(addTeamsAPI, data, headers).then(res => res);
 export const deleteTeam = (id, headers) =>
   axios.get(`${deleteTeamsAPI}/${id}`, headers).then(res => res);
+export const contact = (data, headers) =>
+  axios.post(contactAPI, data, headers).then(res => res);
+export const messages = headers =>
+  axios.get(messagesAPI, headers).then(res => res.data);
