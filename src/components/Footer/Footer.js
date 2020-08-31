@@ -8,7 +8,7 @@ class Footer extends Component {
         className="mt-5"
         style={{
           background:
-            "linear-gradient(to bottom, white 0%, white 50%, #F1F1F1 50%, #F1F1F1 100%)"
+            "linear-gradient(to bottom, white 0%, white 50%, #F1F1F1 50%, #F1F1F1 100%)",
         }}
       >
         <div className="container">
@@ -42,7 +42,7 @@ class Footer extends Component {
                 Ghaziabad, IN 201206
               </p>
               <p>weareuddeshhya@gmail.com</p>
-              <p>+91-8960651955 , +91-8266819291</p>
+              <p>+91-8909884156 , +91-8564063392 , +91-7275559927</p>
             </div>
             <div className="col-lg-3" />
             <div className="col-lg-3">
@@ -51,7 +51,7 @@ class Footer extends Component {
               </p>
               <p>in collaboration with</p>
               <a
-                href="http://dsckiet.tech?utm_source=uddeshhya"
+                href="http://dsckiet.com?utm_source=uddeshhya"
                 target="_blank"
                 rel="noopener noreferrer"
               >
